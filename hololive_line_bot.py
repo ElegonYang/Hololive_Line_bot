@@ -37,11 +37,6 @@ def callback():
     return 'OK'
 
 
-@app.route("/test")
-def test():
-    return 'test'
-
-
 # 學你說話
 @handler.add(MessageEvent, message=TextMessage)
 def pretty_echo(event):
