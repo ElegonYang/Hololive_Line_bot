@@ -39,6 +39,7 @@ def callback():
 def pretty_echo(event):
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
 
+
         # Phoebe 愛唱歌
         pretty_note = '♫♪♬'
         pretty_text = ''
