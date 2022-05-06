@@ -5,6 +5,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import configparser
 import random
+from pprint import pprint
 
 app = Flask(__name__)
 
@@ -33,6 +34,8 @@ def callback():
 
     return 'OK'
 
+app.run(host='0.0.0.0', port=5001)
+
 
 # 學你說話
 @handler.add(MessageEvent, message=TextMessage)
@@ -60,8 +63,58 @@ def pretty_echo(event):
         print('here', event.message.text)
 
 
+# class FlaskMain:
+#
+#     app = Flask(__name__)
+#     config = configparser.ConfigParser()
+#     config.read('config.ini')
+#     line_bot_api = LineBotApi(config.get('line-bot', 'channel_access_token'))
+#     handler = WebhookHandler(config.get('line-bot', 'channel_secret'))
+#
+#     @staticmethod
+#     @app.route("/callback", methods=['POST'])
+#     def callback():
+#         signature = request.headers['X-Line-Signature']
+#         body = request.get_data(as_text=True)
+#         FlaskMain.app.logger.info("Request body: " + body)
+#         try:
+#             print(body, signature)
+#             FlaskMain.handler.handle(body, signature)
+#
+#         except InvalidSignatureError:
+#             abort(400)
+#
+#         return 'OK'
+#
+#     @handler.add(MessageEvent, message=TextMessage)
+#     def echo(self, event):
+#
+#         if event.source.userid != "Udeadbeefdeadbeefdeadbeefdeadbeef":
+#
+#             # Phoebe 愛唱歌
+#             pretty_note = '♫♪♬'
+#             pretty_text = ''
+#
+#             if event.message.text == '我':
+#                 FlaskMain.line_bot_api.reply_message(
+#                     event.reply_token,
+#                     TextSendMessage(text="yu chen is gay")
+#                 )
+#             else:
+#
+#                 for i in event.message.text:
+#                     pretty_text += i
+#                     pretty_text += random.choice(pretty_note)
+#
+#                 FlaskMain.line_bot_api.reply_message(
+#                     event.reply_token,
+#                     TextSendMessage(text=pretty_text)
+#                 )
+#                 print('here', event.message.text)
+#
+#
+# if __name__ == "__main__":
+#
+#     app = FlaskMain()
+#     app.app.run(host='0.0.0.0', port=5001, debug=True)
 
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5001)
-    #app.run()
