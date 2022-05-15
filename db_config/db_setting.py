@@ -8,7 +8,7 @@ def db_set():
         "host": "34.81.126.51",
         "port": 3306,
         "user": "hololive-bbq",
-        "password": " kK=LillE'.8o~;vJ",
+        "password": "kK=LillE'.8o~;vJ",
         "db": "holo_bot"
     }
 
