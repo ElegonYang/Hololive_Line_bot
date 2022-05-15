@@ -5,11 +5,11 @@ def db_set():
 
     db_setting = {
 
-        "host": "localhost",
+        "host": "34.81.126.51",
         "port": 3306,
-        "user": "root",
-        "password": 'aa552300',
-        "db": "test"
+        "user": "hololive-bbq",
+        "password": " kK=LillE'.8o~;vJ",
+        "db": "holo_bot"
     }
 
     connect = pymysql.connect(**db_setting)
