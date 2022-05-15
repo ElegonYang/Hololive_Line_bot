@@ -32,7 +32,7 @@ class Selenium:
 
         if result == "Linux":
             driver_apple = webdriver.Chrome(
-                executable_path=r"D:\PycharmProjects\Hololive_Line_bot\chrome_driver\chromedriver",
+                executable_path=r"/home/memoryangelff7/repo/Hololive_Line_bot/chrome_driver",
                 chrome_options=self.opt_add_argv())
 
             return driver_apple
