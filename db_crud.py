@@ -14,8 +14,6 @@ def get_channel_url(con, cur):
     for res in result:
         url_dict[res[0]] = res[1]
 
-    print(url_dict)
-
     return url_dict
 
 
