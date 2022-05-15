@@ -23,6 +23,7 @@ class Selenium:
         option.add_argument('--headless')
         option.add_experimental_option('excludeSwitches', ['enable-automation'])
         option.add_argument('--profile-directory=Default')
+        option.add_argument("--remote-debugging-port=9222")
 
         return option
 
