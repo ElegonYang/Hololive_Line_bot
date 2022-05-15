@@ -1,4 +1,4 @@
-# Hololive Line Bot 
+# Hololive Line Bot (施工中)
 
 ###### 初版 2022/05/13
 
