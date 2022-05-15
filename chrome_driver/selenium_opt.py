@@ -31,11 +31,11 @@ class Selenium:
         result = str(platform.system())
 
         if result == "Linux":
-            driver_apple = webdriver.Chrome(
-                executable_path=r"/home/memoryangelff7/repo/Hololive_Line_bot/chrome_driver",
+            driver_linux = webdriver.Chrome(
+                executable_path=r"/home/memoryangelff7/repo/Hololive_Line_bot/chrome_driver/chromedriver",
                 chrome_options=self.opt_add_argv())
 
-            return driver_apple
+            return driver_linux
 
         if result == "Windows":
             driver_windows = webdriver.Chrome(
