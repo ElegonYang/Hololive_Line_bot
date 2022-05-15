@@ -33,14 +33,14 @@ class Selenium:
 
         if result == "Darwin":
             driver_apple = webdriver.Chrome(
-                executable_path=r'/chrome_driver/chromedriver',
+                executable_path=r"D:\PycharmProjects\Hololive_Line_bot\chrome_driver\chromedriver",
                 chrome_options=self.opt_add_argv())
 
             return driver_apple
 
         if result == "Windows":
             driver_windows = webdriver.Chrome(
-                executable_path=r'/chrome_driver/chromedriver.exe',
+                executable_path=r'D:\PycharmProjects\Hololive_Line_bot\chrome_driver\chromedriver.exe',
                 chrome_options=self.opt_add_argv())
 
             return driver_windows

@@ -12,8 +12,6 @@ def db_set():
         "db": "test"
     }
 
-
-
     connect = pymysql.connect(**db_setting)
 
     cursor_ = connect.cursor()
