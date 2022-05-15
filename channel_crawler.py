@@ -70,3 +70,5 @@ if __name__ == '__main__':
 
         crawler(conn, cursor, driver, ch_id, ch_urls[ch_id])
 
+    conn.close()
+    driver.close()
