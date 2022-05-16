@@ -1,4 +1,4 @@
-from db_config.db_setting import *
+from db_config import *
 from datetime import datetime
 from itertools import chain
 
