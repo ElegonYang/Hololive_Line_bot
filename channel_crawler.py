@@ -4,7 +4,7 @@
 from selenium.webdriver.common.by import By
 from chrome_driver import *
 from db_crud import *
-from db_config import *
+from db_set import *
 
 
 """
