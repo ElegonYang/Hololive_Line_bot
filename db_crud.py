@@ -1,6 +1,4 @@
-from db_config import *
 from datetime import datetime
-from itertools import chain
 
 
 # 拿到頻道網址

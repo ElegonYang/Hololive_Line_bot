@@ -3,6 +3,7 @@
 
 from selenium.webdriver.common.by import By
 from chrome_driver import *
+from db_crud import *
 from db_config import *
 
 
@@ -65,7 +66,7 @@ def crawler(con, cur, se_driver, ch_id, ch_url):
 
 if __name__ == '__main__':
 
-    conn, cursor = db_set()
+    conn, cursor = db_info()
 
     driver = Selenium().platform_is()
     ch_urls = get_channel_url(conn, cursor)

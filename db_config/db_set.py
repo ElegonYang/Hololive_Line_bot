@@ -1,7 +1,8 @@
 import pymysql
 
 
-def db_set():
+def db_info():
+
     db_setting = {
 
         "host": "34.81.126.51",
@@ -19,5 +20,5 @@ def db_set():
 
 
 if __name__ == "__main__":
-    conn, cursor = db_set()
+    conn, cursor = db_info()
     conn.close()
