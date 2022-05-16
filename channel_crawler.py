@@ -1,6 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from selenium.webdriver.common.by import By
 from chrome_driver import *
 from db_crud import *
+
 
 """
 1.單推的DD烤肉Man: https://www.youtube.com/channel/UCX6fKN_3fpg5aq_G9WinaBg
