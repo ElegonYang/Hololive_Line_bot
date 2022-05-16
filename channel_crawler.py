@@ -71,6 +71,11 @@ if __name__ == '__main__':
     driver = Selenium().platform_is()
     ch_urls = get_channel_url(conn, cursor)
 
+    path = 'output.txt'
+    f = open(path, 'w')
+    f.write('Hello World')
+    f.close()
+
     for ch_id in range(1, len(ch_urls)):
 
         crawler(conn, cursor, driver, ch_id, ch_urls[ch_id])
