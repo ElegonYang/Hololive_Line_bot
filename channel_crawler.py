@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from chrome_driver import *
 from db_crud import *
 from db_set import *
-
+from datetime import datetime
 
 """
 1.單推的DD烤肉Man: https://www.youtube.com/channel/UCX6fKN_3fpg5aq_G9WinaBg
@@ -70,10 +70,10 @@ if __name__ == '__main__':
 
     driver = Selenium().platform_is()
     ch_urls = get_channel_url(conn, cursor)
-
+    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     path = 'output.txt'
     f = open(path, 'w')
-    f.write('Hello World')
+    f.write(now)
     f.close()
 
     for ch_id in range(1, len(ch_urls)):
