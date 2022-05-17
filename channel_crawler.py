@@ -72,8 +72,9 @@ if __name__ == '__main__':
     ch_urls = get_channel_url(conn, cursor)
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     path = 'output.txt'
-    f = open(path, 'w')
-    f.write(now)
+    f = open(path, 'a')
+    f.writelines(now)
+    f.writelines('\n')
     f.close()
 
     for ch_id in range(1, len(ch_urls)):
