@@ -49,3 +49,4 @@ if __name__ == '__main__':
     lineNotifyMessage("mmYXx8gejUEjXTfjM1XjOL9MpTIaA0TOaELLF7pouht", "蕉流一下!")
     app.debug = True
     app.run(port=5004)
+# 003
