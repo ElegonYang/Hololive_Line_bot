@@ -1,4 +1,4 @@
-from selenium.webdriver.common.by import By
+from selenium.webdriver.commeon.by import By
 
 """
 Watson Amelia https://www.youtube.com/channel/UCyl1z3jo3XHR1riLFKG5UAg
