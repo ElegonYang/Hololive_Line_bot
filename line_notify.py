@@ -8,7 +8,6 @@ app = Flask(__name__)
 https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=2BfD1zVZALM2ZUuJ83adLW&redirect_uri=https://2ca4-2001-b011-2005-e88d-444a-80b0-dd5e-67e3.jp.ngrok.io&scope=notify&state=NO_STATE
 '''
 
-
 def getNotifyToken(AuthorizeCode):
     body = {
         "grant_type": "authorization_code",
@@ -38,6 +37,7 @@ def lineNotifyMessage(token, msg):
 
 @app.route('/', methods=['POST', 'GET'])
 def hello_world():
+
     authorizeCode = request.args.get('code')
     token = getNotifyToken(authorizeCode)
     print(token)
