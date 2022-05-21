@@ -17,13 +17,14 @@ class Selenium:
         option.add_argument("user-agent={}".format(self.fh))
         option.add_argument("--blink-settings=imagesEnabled=false")
         option.add_argument('--no-sandbox')
-        # option.add_argument('--disable-dev-shm-usage')
+        option.add_argument('--disable-dev-shm-usage')
         option.add_argument('--dns-prefetch-disable')
         option.add_argument("window-size=1920,1080")
         option.add_argument('--headless')
         option.add_experimental_option('excludeSwitches', ['enable-automation'])
         option.add_argument('--profile-directory=Default')
         option.add_argument("--remote-debugging-port=9222")
+        option.add_experimental_option('useAutomationExtension', False)
 
         return option
 

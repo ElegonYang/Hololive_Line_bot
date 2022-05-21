@@ -8,7 +8,8 @@ app = Flask(__name__)
 https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=2BfD1zVZALM2ZUuJ83adLW&redirect_uri=https://2ca4-2001-b011-2005-e88d-444a-80b0-dd5e-67e3.jp.ngrok.io&scope=notify&state=NO_STATE
 '''
 
-def getNotifyToken(AuthorizeCode):
+
+def get_notify_token(AuthorizeCode):
     body = {
         "grant_type": "authorization_code",
         "code": AuthorizeCode,
@@ -20,7 +21,7 @@ def getNotifyToken(AuthorizeCode):
     return r.json()["access_token"]
 
 
-def lineNotifyMessage(token, msg):
+def line_notify_message(token, msg):
     headers = {
         "Authorization": "Bearer " + token,
         "Content-Type": "application/x-www-form-urlencoded"
@@ -38,15 +39,14 @@ def lineNotifyMessage(token, msg):
 @app.route('/', methods=['POST', 'GET'])
 def hello_world():
 
-    authorizeCode = request.args.get('code')
-    token = getNotifyToken(authorizeCode)
+    authorize_code = request.args.get('code')
+    token = get_notify_token(authorize_code)
     print(token)
-    lineNotifyMessage(token, "恭喜!!!!!!!連動完成")
+    line_notify_message(token, "恭喜!!!!!!!連動完成")
     return f"恭喜你，連動完成"
 
 
 if __name__ == '__main__':
-    lineNotifyMessage("mmYXx8gejUEjXTfjM1XjOL9MpTIaA0TOaELLF7pouht", "蕉流一下!")
+    line_notify_message("mmYXx8gejUEjXTfjM1XjOL9MpTIaA0TOaELLF7pouht", "蕉流一下!")
     app.debug = True
     app.run(port=5004)
-# 003
