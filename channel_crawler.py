@@ -2,10 +2,13 @@
 # -*- coding: utf-8 -*-
 
 from selenium.webdriver.common.by import By
+
+import line_notify
 from chrome_driver import *
 from db_crud import *
 from db_set import *
 from datetime import datetime
+from line_notify import *
 
 """
 1.單推的DD烤肉Man: https://www.youtube.com/channel/UCX6fKN_3fpg5aq_G9WinaBg
@@ -48,12 +51,14 @@ def crawler(con, cur, se_driver, ch_id, ch_url):
 
     se_driver.get(ch_url+'/videos')
 
+    print('ch_url: ',ch_url)
+
     title_class = se_driver.find_elements(By.CSS_SELECTOR, 'div[id="meta"] h3')
     href_class = se_driver.find_elements(By.CSS_SELECTOR, 'div[id="meta"] h3 a')
 
     for title, href in zip(title_class, href_class):
         url = href.get_attribute('href')
-        print(title.text, url)
+        print(title.text)
 
         if check_video_in_db(con, cur, url):
             print('insert')
